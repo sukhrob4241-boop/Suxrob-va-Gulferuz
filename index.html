@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suxrob va Gulferuz | Qiz bazmi taklifnomasi</title>
+    
+    <meta property="og:title" content="Suxrob va Gulferuz | Qiz bazmi taklifnomasi">
+    <meta property="og:description" content="Gulferuzning 2026-yil 25-apreldagi qiz bazmi taklifnomasi.">
+    <meta property="og:image" content="https://suxrob-va-gulferuz.vercel.app/preview.jpg">
+    <meta property="og:type" content="website">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Georgia', serif; }
+        body { background-color: #fffaf0; color: #7a151a; text-align: center; }
+
+        /* Envelope Page */
+        #envelope-page {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #8c1c21; z-index: 100;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            color: #fff;
+        }
+        #envelope-page h1 { font-style: italic; margin-bottom: 40px; font-weight: normal; font-size: 2rem; }
+        .wax-seal {
+            width: 100px; height: 100px; background: radial-gradient(circle, #ffd700, #b8860b); 
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            cursor: pointer; font-weight: bold; color: #8c1c21; font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5), inset 0 0 10px rgba(255,255,255,0.5);
+            border: 2px solid #daa520; transition: transform 0.3s;
+        }
+        .wax-seal:hover { transform: scale(1.1); }
+
+        /* Main Content */
+        #main-content { display: none; padding-bottom: 100px; }
+        .banner { width: 100%; height: auto; display: block; margin-bottom: 20px;}
+        .ornament { width: 120px; margin: 20px auto; display: block; }
+        
+        /* Language Toggle */
+        .lang-toggle { position: absolute; top: 15px; right: 15px; display: flex; gap: 5px; background: white; padding: 5px; border-radius: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .lang-toggle button { cursor: pointer; padding: 5px 12px; border: none; background: transparent; color: #7a151a; font-weight: bold; border-radius: 15px; }
+        .lang-toggle button.active { background: #7a151a; color: white; }
+        
+        .names { font-size: 3rem; margin: 20px 0; font-style: italic; color: #c4262e; }
+        .couple-img { width: 90%; max-width: 350px; margin: 10px auto; display: block; }
+        
+        .text-card { background-color: #ba1c22; color: white; padding: 40px 20px; border-radius: 15px; margin: 30px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .text-card h2 { font-style: italic; font-size: 2rem; margin-bottom: 20px; }
+        .text-card p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
+        
+        .map-btn {
+            display: block; width: 85%; max-width: 300px; margin: 15px auto;
+            padding: 15px; border: 1.5px solid #c4262e; color: #c4262e;
+            text-decoration: none; border-radius: 10px; font-weight: bold; letter-spacing: 1px;
+        }
+        
+        .countdown { display: flex; justify-content: center; gap: 15px; font-size: 2rem; font-weight: bold; margin-top: 20px; color: #c4262e;}
+        .countdown div { display: flex; flex-direction: column; font-size: 0.9rem; font-weight: normal; color: #7a151a;}
+    </style>
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="envelope-page">
+        <h1 id="t-invite">SIZ <br>QIZ BAZMIGA<br>taklif etilgansiz</h1>
+        <div class="wax-seal" onclick="openInvitation()" id="t-open">OCHISH</div>
+        <p style="margin-top: 50px;" id="t-withlove">muhabbat ila,<br>GULFERUZ</p>
+    </div>
+
+    <div id="main-content">
+        <div class="lang-toggle">
+            <button id="btn-uz" class="active" onclick="setLang('uz')">UZ</button>
+            <button id="btn-kk" onclick="setLang('kk')">KK</button>
+        </div>
+
+        <img src="banner.png" alt="Banner" class="banner">
+        
+        <div class="names">Suxrob <br> <span style="font-size: 1.2rem; color:#7a151a;">va</span> <br> Gulferuz</div>
+        
+        <img src="couple.jpg" alt="Couple and Karnay" class="couple-img">
+        <p style="font-size: 0.9rem; letter-spacing: 2px; margin-top: 20px;" id="t-scrolldown">PASTGA TUSHURING &darr;</p>
+
+        <div class="text-card">
+            <h2 id="t-greeting">Aziz va qadrdon yaqinim!</h2>
+            <p id="t-msg1">Hayotimdagi unutilmas kunlardan biri - qiz bazmimni siz bilan birga nishonlashni niyat qildim.</p>
+            <p id="t-msg2">Sizni ushbu kechamga samimiy taklif etaman.</p>
+            <p id="t-msg3">Quvonchli kunimda aziz mehmonim bo'lishingizni intizorlik bilan kutaman.</p>
+        </div>
+
+        <img src="pomegranate.png" alt="Pomegranate" class="ornament">
+
+        <div style="margin: 40px 0;">
+            <h2 style="font-style: italic; font-size: 2.2rem; margin-bottom: 15px;" id="t-addressTitle">Qiz bazmi manzili</h2>
+            <p style="margin: 10px 0; font-size: 1.1rem;">OQ SAROY RESTAURANT<br>Arnasoy street 10A<br>Chilanzar district Tashkent city, 100115</p>
+            <a href="https://yandex.uz/maps/-/CPf-eTju" class="map-btn" target="_blank" id="t-yandex">YANDEX XARITASI</a>
+            <a href="https://maps.app.goo.gl/Qxv5zg9fyWRLdw4R7" class="map-btn" target="_blank">GOOGLE MAPS</a>
+        </div>
+
+        <div style="margin: 50px 0;">
+            <h2 style="font-style: italic; font-size: 2rem;" id="t-countdownTitle">Har lahzani sanayapmiz</h2>
+            <div class="countdown" id="timer">
+                <div><span id="days">00</span> <span id="l-days">Kun</span></div> :
+                <div><span id="hours">00</span> <span id="l-hours">Soat</span></div> :
+                <div><span id="mins">00</span> <span id="l-mins">Daqiqa</span></div> :
+                <div><span id="secs">00</span> <span id="l-secs">Soniya</span></div>
+            </div>
+            <p id="t-arrived" style="display:none; font-weight:bold; margin-top:20px; font-size:1.2rem;"></p>
+        </div>
+        
+        <img src="flower.png" alt="Flower" class="ornament" style="width: 100px;">
+    </div>
+
+    <script>
+        // Translations Dictionary
+        const translations = {
+            uz: {
+                invite: "SIZ <br>QIZ BAZMIGA<br>taklif etilgansiz",
+                open: "OCHISH",
+                withlove: "muhabbat ila,<br>GULFERUZ",
+                scrolldown: "PASTGA TUSHURING &darr;",
+                greeting: "Aziz va qadrdon yaqinim!",
+                msg1: "Hayotimdagi unutilmas kunlardan biri - qiz bazmimni siz bilan birga nishonlashni niyat qildim.",
+                msg2: "Sizni ushbu kechamga samimiy taklif etaman.",
+                msg3: "Quvonchli kunimda aziz mehmonim bo'lishingizni intizorlik bilan kutaman.",
+                addressTitle: "Qiz bazmi manzili",
+                yandex: "YANDEX XARITASI",
+                countdownTitle: "Har lahzani sanayapmiz",
+                days: "Kun", hours: "Soat", mins: "Daqiqa", secs: "Soniya",
+                arrived: "Bugun aynan o'sha kun. Sizni kutaman."
+            },
+            kk: {
+                invite: "SIZ <br>QÍZ BAZIMÍNA<br>shaqırılg'ansız",
+                open: "ASHIW",
+                withlove: "muxabbat penen,<br>GULFERUZ",
+                scrolldown: "TÓMENGE TÚSIŃ &darr;",
+                greeting: "Húrmetli hám qádirli jaqınım!",
+                msg1: "Ómirimdegi umıtılmas kúnlerdiń biri - qız bazımımdı siz benen birge nishanlawdı niyet ettim.",
+                msg2: "Sizdi usı keshege shın júrekten mirát etemen.",
+                msg3: "Quwanıshlı kúnimde áziz miymanım bolıwıńızdı asıǵıplıq penen kútemen.",
+                addressTitle: "Qız bazımı mánzili",
+                yandex: "YANDEX KARTASI",
+                countdownTitle: "Hár lahzanı sanap atırmız",
+                days: "Kún", hours: "Saqat", mins: "Minut", secs: "Sekund",
+                arrived: "Búgin tap usı kún. Sizdi kútemen."
+            }
+        };
+
+        function setLang(lang) {
+            // Update active button styling
+            document.getElementById('btn-uz').classList.remove('active');
+            document.getElementById('btn-kk').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            // Update text
+            document.getElementById('t-invite').innerHTML = translations[lang].invite;
+            document.getElementById('t-open').innerHTML = translations[lang].open;
+            document.getElementById('t-withlove').innerHTML = translations[lang].withlove;
+            document.getElementById('t-scrolldown').innerHTML = translations[lang].scrolldown;
+            document.getElementById('t-greeting').innerHTML = translations[lang].greeting;
+            document.getElementById('t-msg1').innerHTML = translations[lang].msg1;
+            document.getElementById('t-msg2').innerHTML = translations[lang].msg2;
+            document.getElementById('t-msg3').innerHTML = translations[lang].msg3;
+            document.getElementById('t-addressTitle').innerHTML = translations[lang].addressTitle;
+            document.getElementById('t-yandex').innerHTML = translations[lang].yandex;
+            document.getElementById('t-countdownTitle').innerHTML = translations[lang].countdownTitle;
+            document.getElementById('l-days').innerHTML = translations[lang].days;
+            document.getElementById('l-hours').innerHTML = translations[lang].hours;
+            document.getElementById('l-mins').innerHTML = translations[lang].mins;
+            document.getElementById('l-secs').innerHTML = translations[lang].secs;
+            
+            // Store arrived message to use in timer
+            window.arrivedMessage = translations[lang].arrived;
+        }
+
+        function openInvitation() {
+            document.getElementById('envelope-page').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            let music = document.getElementById('bg-music');
+            music.play().catch(e => console.log("Audio needs user interaction."));
+        }
+
+        // Target: April 25, 2026, 12:00:00
+        const targetDate = new Date("April 25, 2026 12:00:00").getTime(); 
+        window.arrivedMessage = translations['uz'].arrived;
+
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("timer").style.display = "none";
+                document.getElementById("t-arrived").style.display = "block";
+                document.getElementById("t-arrived").innerHTML = window.arrivedMessage;
+                return;
+            }
+
+            document.getElementById("days").innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById("hours").innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById("mins").innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById("secs").innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+        }, 1000);
+    </script>
+</body>
+</html>
